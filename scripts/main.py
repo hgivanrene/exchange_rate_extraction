@@ -1,8 +1,11 @@
 def exchange_rate():
     import os
     import requests
+    from dotenv import load_dotenv
 
-    API_KEY = os.getenv('API_KEY')
+    load_dotenv()
+
+    API_KEY = os.getenv('ENV_API_KEY')
     URL = f'http://api.currencylayer.com/live?access_key={API_KEY}'
 
     # Hacemos la solicitud a la API
