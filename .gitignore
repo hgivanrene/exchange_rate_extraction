@@ -4,4 +4,4 @@ __pycache__/
 *.pyo
 
 # Ignore .env file
-# .env
+.env
