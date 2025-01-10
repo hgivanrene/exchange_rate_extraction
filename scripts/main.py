@@ -57,7 +57,7 @@ def snowflake_load():
     print("Inserting data!!")
 
     # Insert data from each row of the dataframe. Load.
-    insert_sql = f"INSERT INTO PHYGITAL_PROD.BRONZE_LAYER.GLOBAL_EXCHANGE_RATE (currency_code, amount, exchange_at) VALUES (%s, %s, %s)"
+    insert_sql = f"INSERT INTO {sf_database}.{sf_schema}.GLOBAL_EXCHANGE_RATE (currency_code, amount, exchange_at) VALUES (%s, %s, %s)"
     for index, row in data.iterrows():
         cursor.execute(insert_sql, (row['currency_code'], row['amount'], row['exchange_at']))
 
